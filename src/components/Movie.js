@@ -19,7 +19,7 @@ const Movie = (props) => {
     }
 
     const handleAddFav = () => {
-        props.addFavorite(movie.title);
+        props.addFavorite(movie);
     }
     
     return(<div className="modal-page col">
