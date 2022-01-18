@@ -8,6 +8,7 @@ import { addFavorite } from '../actions/favoritesActions';
 const Movie = (props) => {
     const { id } = useParams();
     const { push } = useHistory();
+    const displayFavorites = props.displayFavorites;
 
     const movies = props.movies;
     const movie = movies.find(movie=>movie.id===Number(id));
@@ -50,7 +51,7 @@ const Movie = (props) => {
                         </section>
                         
                         <section>
-                            <span className="m-2 btn btn-dark" onClick={handleAddFav}>Favorite</span>
+                            {displayFavorites && <span className="m-2 btn btn-dark" onClick={handleAddFav}>Favorite</span>}
                             <span className="delete" onClick={handleDelete}><input type="button" className="m-2 btn btn-danger" value="Delete"/></span>
                         </section>
                     </div>
